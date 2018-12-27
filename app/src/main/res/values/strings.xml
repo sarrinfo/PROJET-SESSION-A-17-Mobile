@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">YAKALMA</string>
+    <string name="action_settings">Parametre</string>
+
+    <string name="tabHome">EN VEDETTE</string>
+    <string name="tabList">RECETTE</string>
+    <string name="tabNewRecette">AJOUTER</string>
+    <string name="tabDayMenu">MENU JOUR</string>
+    <string name="tabHelp">AIDE</string>
+    <string name="tabIngredient">INGREDIENTS</string>
+    <string name="tabPrepartion">PREPARATION</string>
+    <string name="tabLiens">LIENS</string>
+
+    <string name="edtDescription">"Description du menu du jour "</string>
+    <string name="txtTitreRectte">Nom recette :</string>
+
+    <string name="txtTitreRecette" />
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_acceuil_fragment">EN VEDETTE</string>
+    <string name="hello_day_menu_fragment">Menu du jour</string>
+    <string name="hello_nouveau_fragment">Ajouter recette</string>
+    <string name="hello_liste_fragment">Menu de la semaine</string>
+    <string name="edtTitreRecettte">Saisir le titre de la recette</string>
+    <string name="edtIngredient">ex : 2 gousses d\'ail, haches</string>
+    <string name="btnAddIngredient">"ex : gousses d'ail hachees "</string>
+    <string name="eedtAddPreparation">"Saisir une etape de preparattion "</string>
+    <string name="txtDureePreparation">Temps de preparation :</string>
+    <string name="edtMM">Minute</string>
+    <string name="txtTempsCuisson">Temps cuisson :</string>
+    <string name="btnTerminer">Terminer</string>
+    <string name="edtHH">HH</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

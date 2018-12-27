@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DayMenuFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imageMenuRecette"
+            android:layout_width="188dp"
+            android:layout_height="159dp"
+            android:layout_marginTop="16dp"
+            android:layout_weight="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_dejeuner" />
+
+        <TextView
+            android:id="@+id/txtTitreMenuRecette"
+            android:layout_width="124dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toEndOf="@+id/imageMenuRecette"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Titre Recette" />
+
+        <ImageView
+            android:id="@+id/imageMenuNotation"
+            android:layout_width="50dp"
+            android:layout_height="28dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtTitreMenuRecette"
+            app:srcCompat="@android:drawable/star_big_on" />
+
+        <TextView
+            android:id="@+id/txtMenuNote"
+            android:layout_width="81dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="8dp"
+            android:text="Note :"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/imageMenuRecette"
+            app:layout_constraintTop_toBottomOf="@+id/txtTitreMenuRecette" />
+
+        <TextView
+            android:id="@+id/txtMenuPreparation"
+            android:layout_width="89dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="28dp"
+            android:layout_weight="1"
+            android:text="Preparation :"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/txtMenuDureePreparation"
+            app:layout_constraintTop_toBottomOf="@+id/txtMenuNote" />
+
+        <TextView
+            android:id="@+id/txtMenuDureePreparation"
+            android:layout_width="50dp"
+            android:layout_height="27dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_weight="1"
+            android:text="45 min"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageMenuNotation" />
+
+        <TextView
+            android:id="@+id/txtMenuTotal"
+            android:layout_width="87dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="32dp"
+            android:layout_weight="1"
+            android:text="Total :"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/divider8"
+            app:layout_constraintEnd_toStartOf="@+id/txtMenuDureeTotal"
+            app:layout_constraintTop_toBottomOf="@+id/txtMenuPreparation"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/txtMenuDureeTotal"
+            android:layout_width="48dp"
+            android:layout_height="27dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="16dp"
+            android:layout_weight="1"
+            android:text="50 min"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtMenuDureePreparation" />
+
+        <View
+            android:id="@+id/divider8"
+            android:layout_width="368dp"
+            android:layout_height="4dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="?android:attr/listDivider"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageMenuRecette" />
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tabMenuRecetteLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/divider8"
+            app:tabIndicatorColor="@color/colorRouge"
+            app:tabSelectedTextColor="@color/colorBlack"
+            app:tabTextColor="@color/colorPrimary">
+
+            <android.support.design.widget.TabItem
+                android:id="@+id/tabDayMenuIngredient"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="INGREDIENTS" />
+
+            <android.support.design.widget.TabItem
+                android:id="@+id/tabDayMenuPreparation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PREPARATION" />
+
+
+        </android.support.design.widget.TabLayout>
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewMenuPager"
+            android:layout_width="match_parent"
+            android:layout_height="298dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tabMenuRecetteLayout" />
+
+        <Button
+            android:id="@+id/btnFavoris"
+            android:layout_width="41dp"
+            android:layout_height="31dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/ic_favoris"
+            android:backgroundTint="@color/colorBlack"
+            app:layout_constraintBottom_toTopOf="@+id/imageMenuNotation"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/txtTitreMenuRecette" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</FrameLayout>

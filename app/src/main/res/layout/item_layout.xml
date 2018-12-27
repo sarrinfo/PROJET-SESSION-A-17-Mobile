@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ListesFragment">
+
+    <TextView
+        android:id="@+id/txtTitre"
+        android:layout_width="368dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:textAlignment="viewStart"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/divider4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.235" />
+
+    <View
+        android:id="@+id/divider4"
+        android:layout_width="368dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="8dp"
+        android:background="@color/colorRouge"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageItemRecette"
+        android:layout_width="166dp"
+        android:layout_height="204dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_weight="1"
+        app:layout_constraintBottom_toBottomOf="@+id/divider5"
+        app:layout_constraintEnd_toStartOf="@+id/divider7"
+        app:layout_constraintHorizontal_bias="0.258"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider4"
+        app:layout_constraintVertical_bias="0.214"
+        app:srcCompat="@drawable/ic_dejeuner" />
+
+
+    <View
+        android:id="@+id/divider5"
+        android:layout_width="368dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="312dp"
+        android:layout_marginEnd="8dp"
+        android:background="@color/colorRouge"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/divider6"
+        android:layout_width="560dp"
+        android:layout_height="5dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="356dp"
+        android:layout_marginEnd="8dp"
+        android:background="@color/colorRouge"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.145"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/divider7"
+        android:layout_width="2dp"
+        android:layout_height="228dp"
+        android:layout_marginStart="204dp"
+        android:layout_marginTop="32dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtTitre" />
+
+    <TextView
+        android:id="@+id/txtPreparation"
+        android:layout_width="97dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="76dp"
+        android:layout_marginEnd="8dp"
+        android:layout_weight="1"
+        android:text="Preparation :"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/txtDureePreparation"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/divider7"
+        app:layout_constraintTop_toTopOf="@+id/divider7" />
+
+    <TextView
+        android:id="@+id/txtDureePreparation"
+        android:layout_width="wrap_content"
+        android:layout_height="37dp"
+        android:layout_marginTop="76dp"
+        android:layout_marginEnd="16dp"
+        android:layout_weight="1"
+        android:text="45 min"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/divider7" />
+
+    <TextView
+        android:id="@+id/txtTotal"
+        android:layout_width="97dp"
+        android:layout_height="31dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="8dp"
+        android:layout_weight="1"
+        android:text="Total :"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/txtDureeTotal"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/divider7"
+        app:layout_constraintTop_toBottomOf="@+id/txtPreparation" />
+
+    <TextView
+        android:id="@+id/txtDureeTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_weight="1"
+        android:text="50 min"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtDureePreparation" />
+
+    <ImageView
+        android:id="@+id/imgNotation"
+        android:layout_width="wrap_content"
+        android:layout_height="33dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.785"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/divider5"
+        app:srcCompat="@android:drawable/star_big_on" />
+
+</android.support.constraint.ConstraintLayout>
