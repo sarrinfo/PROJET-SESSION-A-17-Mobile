@@ -76,4 +76,27 @@ public class DBAdapter {
         }
         return curseur;
     }
+
+    //Requete pour recuperer les details de la recette
+    public Recette OneRecette(int position){
+        Recette recette ;
+        String sql = "SELECT * FROM "+DBHelper.TABLE_1+" WHERE "+DBHelper.COL_ID+ " = "+position;
+        getMaBd();
+        //Indiquer les colonnes du SELECT
+        String[] cols ={DBHelper.COL_ID, DBHelper.COL_NAME_1, DBHelper.COL_NAME_2, DBHelper.COL_NAME_3, DBHelper.COL_NAME_4, DBHelper.COL_NAME_5};
+        Cursor curseur = db.rawQuery(sql, null);
+        //Parcourir le curseur
+        curseur.moveToFirst();
+            int id = curseur.getInt(0);
+            String titre = curseur.getString(1);
+            int tempsPreparation = curseur.getInt(2);
+            int tempsCuisson = curseur.getInt(3);
+            String categorie = curseur.getString(4);
+            String urlPhotos = curseur.getString(5);
+
+            recette = new Recette(titre,tempsPreparation,tempsCuisson,categorie,urlPhotos);
+            listRecette.add(recette);
+
+        return recette;
+    }
 }

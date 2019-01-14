@@ -18,8 +18,7 @@
             android:layout_marginTop="16dp"
             android:layout_weight="1"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_dejeuner" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/txtTitreMenuRecette"
@@ -27,19 +26,31 @@
             android:layout_height="40dp"
             android:layout_marginStart="12dp"
             android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:textAlignment="textStart"
+            android:textColor="@color/colorRouge"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/btnFavoris"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
             app:layout_constraintStart_toEndOf="@+id/imageMenuRecette"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="Titre Recette" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/imageMenuNotation"
-            android:layout_width="50dp"
-            android:layout_height="28dp"
+            android:layout_width="66dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="21dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/txtMenuDureePreparation"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/txtMenuNote"
             app:layout_constraintTop_toBottomOf="@+id/txtTitreMenuRecette"
-            app:srcCompat="@android:drawable/star_big_on" />
+            app:layout_constraintVertical_chainStyle="packed"
+            app:srcCompat="@drawable/notation_5e" />
 
         <TextView
             android:id="@+id/txtMenuNote"
@@ -56,22 +67,23 @@
             android:id="@+id/txtMenuPreparation"
             android:layout_width="89dp"
             android:layout_height="30dp"
+            android:layout_marginStart="13dp"
             android:layout_marginTop="4dp"
             android:layout_marginEnd="28dp"
             android:layout_weight="1"
             android:text="Preparation :"
             android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@+id/txtMenuDureePreparation"
+            app:layout_constraintStart_toEndOf="@+id/imageMenuRecette"
             app:layout_constraintTop_toBottomOf="@+id/txtMenuNote" />
 
         <TextView
             android:id="@+id/txtMenuDureePreparation"
             android:layout_width="50dp"
             android:layout_height="27dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
             android:layout_weight="1"
-            android:text="45 min"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageMenuNotation" />
 
@@ -79,6 +91,7 @@
             android:id="@+id/txtMenuTotal"
             android:layout_width="87dp"
             android:layout_height="30dp"
+            android:layout_marginStart="13dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="32dp"
             android:layout_weight="1"
@@ -86,6 +99,7 @@
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/divider8"
             app:layout_constraintEnd_toStartOf="@+id/txtMenuDureeTotal"
+            app:layout_constraintStart_toEndOf="@+id/imageMenuRecette"
             app:layout_constraintTop_toBottomOf="@+id/txtMenuPreparation"
             app:layout_constraintVertical_bias="0.0" />
 
@@ -96,7 +110,6 @@
             android:layout_marginTop="12dp"
             android:layout_marginEnd="16dp"
             android:layout_weight="1"
-            android:text="50 min"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtMenuDureePreparation" />
 
@@ -143,22 +156,6 @@
 
         </android.support.design.widget.TabLayout>
 
-        <android.support.v4.view.ViewPager
-            android:id="@+id/viewMenuPager"
-            android:layout_width="match_parent"
-            android:layout_height="298dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tabMenuRecetteLayout" />
-
         <Button
             android:id="@+id/btnFavoris"
             android:layout_width="41dp"
@@ -172,6 +169,74 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/txtTitreMenuRecette" />
+
+        <FrameLayout
+            android:id="@+id/frameIngredient"
+            android:layout_width="368dp"
+            android:layout_height="292dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tabMenuRecetteLayout">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <ListView
+                    android:id="@+id/listingViewPreparation"
+                    android:layout_width="368dp"
+                    android:layout_height="495dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+            </RelativeLayout>
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/framePreparation"
+            android:layout_width="368dp"
+            android:layout_height="292dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tabMenuRecetteLayout">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <ListView
+                    android:id="@+id/listingViewIngredient"
+                    android:layout_width="368dp"
+                    android:layout_height="495dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+            </RelativeLayout>
+
+        </FrameLayout>
 
     </android.support.constraint.ConstraintLayout>
 

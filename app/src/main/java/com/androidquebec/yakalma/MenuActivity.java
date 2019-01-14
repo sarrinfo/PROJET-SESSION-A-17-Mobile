@@ -35,8 +35,7 @@ public class MenuActivity extends AppCompatActivity {
     TabItem tabList;
     TabItem tabDayMenu;
     Toolbar toolbar;
-    DBAdapter dbAdapter;
-    Recette recette;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +44,8 @@ public class MenuActivity extends AppCompatActivity {
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle(getResources().getString(R.string.app_name));
         setSupportActionBar(toolbar);
+
+
 
         setWidgets();
         setListeners();
